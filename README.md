@@ -1,31 +1,48 @@
 # useful-agent-skills
 
-Practical Claude Code skills, published as they get battle-tested in daily
-use. Each skill is a self-contained folder you drop into `~/.claude/skills/`.
+Practical skills for Claude Code and other coding agents, published as they
+get battle-tested in daily use. If it's in the table, I use it every day.
 
-⭐ **Star** the repo and **Watch → Custom → Releases** — every new skill ships
-as a release, so you get notified when a new one drops.
+⭐ **Star** the repo and **Watch → Custom → Releases** — every new skill
+ships as a release, so you get notified when a new one drops.
 
 ## Skills
 
-| Skill | What it does |
+| Skill | Problem it solves |
 |---|---|
-| [fable-low-power](skills/fable-low-power/) | Auto-detects when your Anthropic usage limits run low and flips Claude Code into a token-saving profile — the frontier model judges, cheaper models execute. Tracks frontier-model burn per session so you can see the savings. Zero credentials; runs off the statusline payload. |
+| [fable-low-power](skills/fable-low-power/) | Your frontier-model quota burns down on greps and builds a cheaper model could do. This watches your live 5h/7d limits and flips Claude Code into a frontier-judges / cheap-executes profile before you hit the wall — and tracks the burn so you can see the savings. |
 
-## Install pattern
+## How to install a skill
 
-Every skill follows the same shape:
+The easiest way is to paste this into Claude Code or your favorite coding
+agent:
 
-```bash
+```text
+Install the fable-low-power skill globally from https://github.com/ussumant/useful-agent-skills and wire it up per its README
+```
+
+You can also install with `npx`:
+
+```sh
+npx skills add ussumant/useful-agent-skills --skill fable-low-power --global --yes
+```
+
+Or fully manually:
+
+```sh
 git clone https://github.com/ussumant/useful-agent-skills.git
 cp -r useful-agent-skills/skills/<name> ~/.claude/skills/<name>
 ```
 
-Then follow the skill's own `README.md` for any settings.json wiring
-(statusline, hooks). Skills are plain bash + python3 stdlib — nothing to
-install, nothing phones home.
+Some skills need a line or two of `settings.json` wiring (hooks, statusline)
+— each skill's own `README.md` has the exact snippet.
 
-## Why one repo
+## What's inside a skill
 
-Skills land here as they prove themselves in real daily work — not as a
-dump of everything I try. If it's in the table, I use it.
+Every skill is a self-contained folder: `SKILL.md` (the instructions your
+agent loads) plus any scripts it needs. Plain bash + python3 stdlib —
+nothing to install, nothing phones home.
+
+## License
+
+MIT
