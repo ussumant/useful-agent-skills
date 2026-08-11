@@ -1,4 +1,4 @@
-# everyday-claude-skills
+# useful-agent-skills
 
 Practical Claude Code skills, published as they get battle-tested in daily
 use. Each skill is a self-contained folder you drop into `~/.claude/skills/`.
@@ -17,8 +17,8 @@ as a release, so you get notified when a new one drops.
 Every skill follows the same shape:
 
 ```bash
-git clone https://github.com/ussumant/everyday-claude-skills.git
-cp -r everyday-claude-skills/skills/<name> ~/.claude/skills/<name>
+git clone https://github.com/ussumant/useful-agent-skills.git
+cp -r useful-agent-skills/skills/<name> ~/.claude/skills/<name>
 ```
 
 Then follow the skill's own `README.md` for any settings.json wiring
