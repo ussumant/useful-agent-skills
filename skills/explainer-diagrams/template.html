@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>explainer diagrams — starter</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+<style>
+/* ===== the explainer-diagrams grammar — shared, do not restyle ===== */
+:root {
+  --ink: #000; --text: #666; --muted: #767676;
+  --blue: #1a52e0; --blue-lite: #a8c0f7; --orange: #d66b2f; --gold: #aa8b32; --slate: #557c9b;
+  --paper: #fff; --panel: #f5f7ff; --orange-tint: #fff3ea; --bg: #fbfbfb; --border: #dcdcdc;
+  --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  --pixel: "Pixelify Sans", sans-serif;
+  --sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body { background: #d9d9d9; font-family: var(--mono); color: var(--text); padding: 40px 0 80px; }
+.page-note { max-width: 1100px; margin: 0 auto 28px; padding: 0 4px; color: var(--muted); font-size: 11px; }
+
+/* shot shell: one #shotN per diagram; the PNG is this element */
+.shot { width: 1100px; margin: 0 auto 40px; padding: 40px; background: var(--paper); }
+.shot-head { display: grid; grid-template-columns: 34px minmax(0,1fr); gap: 14px; align-items: start; margin-bottom: 22px; }
+.shot-index { padding-top: 6px; color: var(--blue); font-family: var(--mono); font-size: 14px; }
+.shot-head h2 { margin: 0 0 8px; color: var(--ink); font-family: var(--pixel); font-size: 27px; font-weight: 400; line-height: 1.35; }
+.shot-head p { margin: 0; max-width: 860px; color: #3f3f3f; font-family: var(--mono); font-size: 14px; line-height: 1.6; }
+.scene { position: relative; background: var(--bg); border: 1px solid var(--border); padding: 30px; width: 1020px; }
+
+/* cards */
+.card { position: relative; background: #fff; border: 1px solid var(--blue); border-radius: 3px; padding: 10px 13px; }
+.card.tint-orange { border-color: var(--orange); background: var(--orange-tint); }
+.card.tint-blue { background: var(--panel); }
+.card.solid { background: var(--blue); border-color: var(--blue); }
+.card.dashed { border-style: dashed; }
+.card.gray { border-color: #aaa; background: #f2f2f2; opacity: .85; }
+.card .label { display: block; margin-bottom: 4px; font-family: var(--sans); font-size: 15px; font-weight: 700; color: var(--ink); line-height: 1.35; }
+.card.solid .label { color: #fff; }
+.card .sub { display: block; font-family: var(--mono); font-size: 13px; color: #555; line-height: 1.5; }
+.card.solid .sub { color: #d9e5ff; }
+.card.tint-orange .sub { color: #8a4a25; }
+.card.gray .sub { color: #5a5a5a; }
+.card .tag { display: block; margin-bottom: 5px; font-family: var(--mono); font-size: 12px; letter-spacing: .02em; color: var(--muted); text-transform: uppercase; }
+.card.tint-orange .tag { color: var(--orange); }
+.card.solid .tag { color: #cfe0ff; }
+.card.gray .tag { color: #767676; }
+.card .strike { text-decoration: line-through; text-decoration-color: #888; }
+
+/* containers, labels, verdicts */
+.dashed-box { position: relative; border: 1px dashed var(--blue); background: var(--panel); border-radius: 3px; padding: 34px 18px 18px; }
+.dashed-box > .box-label { position: absolute; top: 10px; left: 14px; }
+.mono-caption { color: var(--blue); font-family: var(--mono); font-size: 12px; letter-spacing: .07em; text-transform: uppercase; }
+.mono-caption.orange { color: var(--orange); }
+.mono-caption.gray { color: #8a8a8a; }
+.verdict { font-family: var(--pixel); font-size: 18px; color: var(--ink); text-align: center; }
+.badge-x { position: absolute; top: -12px; right: -12px; width: 26px; height: 26px; border-radius: 50%; background: #fff; border: 2px solid #b33; color: #b33; font-family: var(--sans); font-weight: 700; font-size: 15px; line-height: 22px; text-align: center; }
+
+/* layout helpers */
+.row { display: flex; align-items: center; gap: 14px; }
+.row.top { align-items: flex-start; }
+.col { display: flex; flex-direction: column; gap: 12px; }
+.grow { flex: 1 1 auto; min-width: 0; }
+.connector { flex: 0 0 auto; display: block; }
+
+/* stats, bars, callout, footnote */
+.stat-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-top: 20px; }
+.stat-tile { padding: 14px 12px; border: 1px solid var(--border); background: var(--bg); text-align: center; }
+.stat-tile b { display: block; color: var(--blue); font-family: var(--mono); font-size: 24px; font-weight: 500; }
+.stat-tile span { display: block; margin-top: 4px; color: var(--muted); font-family: var(--mono); font-size: 11px; }
+.bar { display: flex; height: 30px; border-radius: 2px; overflow: hidden; margin-top: 22px; }
+.bar .seg { height: 100%; }
+.bar-tag { position: absolute; left: 10px; top: 7px; color: #fff; font-family: var(--mono); font-size: 13px; font-weight: 700; }
+.legend { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 6px 22px; margin-top: 12px; font-family: var(--mono); font-size: 12px; color: #444; }
+.legend i { display: inline-block; width: 11px; height: 11px; margin-right: 8px; vertical-align: -1px; }
+.callout { padding: 16px 18px; border-left: 2px solid var(--blue); background: var(--panel); margin-top: 20px; }
+.callout strong { display: block; margin-bottom: 7px; font-family: var(--pixel); font-size: 19px; font-weight: 400; color: var(--ink); }
+.callout p { margin: 0; font-family: var(--mono); font-size: 13px; color: #3f3f3f; line-height: 1.55; }
+.footnote { max-width: 960px; margin: 12px 0 0; color: var(--muted); font-family: var(--mono); font-size: 11px; line-height: 1.6; }
+</style>
+</head>
+<body>
+<p class="page-note">explainer-diagrams starter — one <code>#shotN</code> per diagram; shoot each with shoot.mjs. Delete these two examples once you have your own.</p>
+
+<!-- ===== EXAMPLE 1: cards + connectors + dashed container + callout ===== -->
+<div id="shot1" class="shot">
+  <div class="shot-head">
+    <span class="shot-index">01</span>
+    <div><h2>Input, loop, output</h2><p>One line of mono under the title says what the reader is looking at. Nothing else up here.</p></div>
+  </div>
+  <div class="scene">
+    <div class="row top">
+      <div class="card tint-orange" style="width:230px;">
+        <span class="tag">Seed · where it entered</span>
+        <span class="sub">&ldquo;A quote of fourteen words or fewer, verbatim, with an ellipsis if cut…&rdquo;</span>
+      </div>
+      <svg class="connector" viewBox="0 0 70 40" width="70" height="40">
+        <defs><marker id="s1-orange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#d66b2f"/></marker></defs>
+        <path d="M4 20 H60" stroke="#d66b2f" stroke-width="1.7" stroke-dasharray="5 5" fill="none" marker-end="url(#s1-orange)"/>
+      </svg>
+      <div class="dashed-box grow">
+        <span class="box-label mono-caption">The mechanism</span>
+        <div class="row">
+          <div class="card grow"><span class="label">Step one</span><span class="sub">what happened?</span></div>
+          <svg class="connector" viewBox="0 0 50 40" width="50" height="40">
+            <defs><marker id="s1-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#1a52e0"/></marker></defs>
+            <path d="M4 20 H42" stroke="#1a52e0" stroke-width="2" fill="none" marker-end="url(#s1-blue)"/>
+          </svg>
+          <div class="card grow"><span class="label">Step two</span><span class="sub">what matters now?</span></div>
+          <svg class="connector" viewBox="0 0 50 40" width="50" height="40">
+            <path d="M4 20 H42" stroke="#1a52e0" stroke-width="2" fill="none" marker-end="url(#s1-blue)"/>
+          </svg>
+          <div class="card solid grow"><span class="label">Output</span><span class="sub">the line the reader came for</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="row" style="margin-top:22px;">
+      <div class="card gray" style="width:230px;"><span class="badge-x">×</span><span class="tag">never happened</span><span class="sub">the road not taken, grayed</span></div>
+      <div class="grow"></div>
+      <div class="verdict">what it means, in three words</div>
+      <div class="grow"></div>
+    </div>
+  </div>
+  <div class="callout">
+    <strong>The one-line takeaway.</strong>
+    <p>One mono sentence that a reader who only sees this PNG still gets.</p>
+  </div>
+</div>
+
+<!-- ===== EXAMPLE 2: stat tiles + stacked bar + legend + footnote ===== -->
+<div id="shot2" class="shot">
+  <div class="shot-head">
+    <span class="shot-index">02</span>
+    <div><h2>By the numbers</h2><p>Five tiles, one bar, exact figures in the legend.</p></div>
+  </div>
+  <div class="scene">
+    <div class="stat-row" style="margin-top:0;">
+      <div class="stat-tile"><b>1,992</b><span>calls</span></div>
+      <div class="stat-tile"><b>15.46M</b><span>tokens</span></div>
+      <div class="stat-tile"><b>$50.61</b><span>at list</span></div>
+      <div class="stat-tile"><b>$0</b><span>billed</span></div>
+      <div class="stat-tile"><b>19.2h</b><span>model time</span></div>
+    </div>
+    <div style="position:relative;">
+      <div class="bar">
+        <div class="seg" style="width:83%;background:var(--blue);"></div>
+        <div class="seg" style="width:5.6%;background:var(--orange);"></div>
+        <div class="seg" style="width:4.2%;background:#9fb3d9;"></div>
+        <div class="seg" style="width:2.8%;background:#e7b98f;"></div>
+        <div class="seg" style="width:2.8%;background:#c6d3ee;"></div>
+        <div class="seg" style="width:1.6%;background:#f0d3ba;"></div>
+      </div>
+      <div class="bar-tag">83%</div>
+    </div>
+    <div class="legend">
+      <div><i style="background:var(--blue);"></i>decompose (haiku) — $41.94</div>
+      <div><i style="background:var(--orange);"></i>reflection (sonnet) — $2.82</div>
+      <div><i style="background:#9fb3d9;"></i>should_react (haiku) — $2.13</div>
+      <div><i style="background:#e7b98f;"></i>daily_plan (sonnet) — $1.42</div>
+      <div><i style="background:#c6d3ee;"></i>score_batch (haiku) — $1.42</div>
+      <div><i style="background:#f0d3ba;"></i>talk_turn (sonnet) — $0.87</div>
+    </div>
+  </div>
+  <div class="callout">
+    <strong>The thinking cost $5.</strong>
+    <p>The &ldquo;walk to desk&rdquo; picker cost $42.</p>
+  </div>
+  <p class="footnote">Footnote for method caveats, 11px mono. Never a link to something unpublished.</p>
+</div>
+</body>
+</html>

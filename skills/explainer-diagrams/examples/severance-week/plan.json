@@ -1,0 +1,128 @@
+{
+  "_note": "Plan that produced examples/severance-week/out/*.png. Replace the two path prefixes with absolute paths on your machine before running.",
+  "url": "file:///ABS/PATH/TO/examples/severance-week/index.html",
+  "viewport": {
+    "width": 1300,
+    "height": 1000,
+    "deviceScaleFactor": 2
+  },
+  "steps": [
+    {
+      "type": "eval",
+      "expr": "document.fonts.ready.then(() => true)",
+      "label": "fonts-ready-promise-started"
+    },
+    {
+      "type": "waitFor",
+      "expr": "document.fonts.status === 'loaded'",
+      "timeoutMs": 15000
+    },
+    {
+      "type": "wait",
+      "ms": 250
+    },
+    {
+      "type": "eval",
+      "expr": "document.fonts.check('1em \"Pixelify Sans\"')",
+      "label": "pixelify-sans-loaded"
+    },
+    {
+      "type": "eval",
+      "expr": "(function(){var el=document.querySelector('#shot1'); el.scrollIntoView({block:'start'}); return el.getBoundingClientRect().height;})()",
+      "label": "shot1-height"
+    },
+    {
+      "type": "wait",
+      "ms": 150
+    },
+    {
+      "type": "shot",
+      "selector": "#shot1",
+      "path": "/ABS/PATH/TO/examples/severance-week/out/13-one-paragraph-five-days.png"
+    },
+    {
+      "type": "eval",
+      "expr": "(function(){var el=document.querySelector('#shot2'); el.scrollIntoView({block:'start'}); return el.getBoundingClientRect().height;})()",
+      "label": "shot2-height"
+    },
+    {
+      "type": "wait",
+      "ms": 150
+    },
+    {
+      "type": "shot",
+      "selector": "#shot2",
+      "path": "/ABS/PATH/TO/examples/severance-week/out/20-how-one-line-got-made.png"
+    },
+    {
+      "type": "eval",
+      "expr": "(function(){var el=document.querySelector('#shot3'); el.scrollIntoView({block:'start'}); return el.getBoundingClientRect().height;})()",
+      "label": "shot3-height"
+    },
+    {
+      "type": "wait",
+      "ms": 150
+    },
+    {
+      "type": "shot",
+      "selector": "#shot3",
+      "path": "/ABS/PATH/TO/examples/severance-week/out/19-same-whisper-two-minds.png"
+    },
+    {
+      "type": "eval",
+      "expr": "(function(){var el=document.querySelector('#shot4'); el.scrollIntoView({block:'start'}); return el.getBoundingClientRect().height;})()",
+      "label": "shot4-height"
+    },
+    {
+      "type": "wait",
+      "ms": 150
+    },
+    {
+      "type": "shot",
+      "selector": "#shot4",
+      "path": "/ABS/PATH/TO/examples/severance-week/out/22-two-fridays.png"
+    },
+    {
+      "type": "eval",
+      "expr": "(function(){var el=document.querySelector('#shot5'); el.scrollIntoView({block:'start'}); return el.getBoundingClientRect().height;})()",
+      "label": "shot5-height"
+    },
+    {
+      "type": "wait",
+      "ms": 150
+    },
+    {
+      "type": "shot",
+      "selector": "#shot5",
+      "path": "/ABS/PATH/TO/examples/severance-week/out/24-by-the-numbers.png"
+    },
+    {
+      "type": "eval",
+      "expr": "(function(){var el=document.querySelector('#shot6'); el.scrollIntoView({block:'start'}); return el.getBoundingClientRect().height;})()",
+      "label": "shot6-height"
+    },
+    {
+      "type": "wait",
+      "ms": 150
+    },
+    {
+      "type": "shot",
+      "selector": "#shot6",
+      "path": "/ABS/PATH/TO/examples/severance-week/out/25-what-didnt-work.png"
+    },
+    {
+      "type": "eval",
+      "expr": "(function(){var el=document.querySelector('#shot7'); el.scrollIntoView({block:'start'}); return el.getBoundingClientRect().height;})()",
+      "label": "shot7-height"
+    },
+    {
+      "type": "wait",
+      "ms": 150
+    },
+    {
+      "type": "shot",
+      "selector": "#shot7",
+      "path": "/ABS/PATH/TO/examples/severance-week/out/03-before-after-architecture.png"
+    }
+  ]
+}

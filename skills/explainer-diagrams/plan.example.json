@@ -1,0 +1,18 @@
+{
+  "_note": "Copy next to your diagrams/index.html, make every path absolute, one shot per #shotN.",
+  "url": "file:///ABS/PATH/TO/diagrams/index.html",
+  "viewport": { "width": 1300, "height": 1000, "deviceScaleFactor": 2 },
+  "steps": [
+    { "type": "waitFor", "expr": "document.fonts.status === 'loaded'", "timeoutMs": 15000 },
+    { "type": "wait", "ms": 250 },
+    { "type": "eval", "expr": "document.fonts.check('1em \"Pixelify Sans\"')", "label": "pixelify-sans-loaded (must be true)" },
+
+    { "type": "eval", "expr": "(function(){var el=document.querySelector('#shot1'); el.scrollIntoView({block:'start'}); return el.getBoundingClientRect().height;})()", "label": "shot1-height" },
+    { "type": "wait", "ms": 150 },
+    { "type": "shot", "selector": "#shot1", "path": "/ABS/PATH/TO/diagrams/out/01-name.png" },
+
+    { "type": "eval", "expr": "(function(){var el=document.querySelector('#shot2'); el.scrollIntoView({block:'start'}); return el.getBoundingClientRect().height;})()", "label": "shot2-height" },
+    { "type": "wait", "ms": 150 },
+    { "type": "shot", "selector": "#shot2", "path": "/ABS/PATH/TO/diagrams/out/02-name.png" }
+  ]
+}

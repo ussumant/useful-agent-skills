@@ -11,6 +11,7 @@ ships as a release, so you get notified when a new one drops.
 | Skill | Problem it solves |
 |---|---|
 | [fable-low-power](skills/fable-low-power/) | Your frontier-model quota burns down on greps and builds a cheaper model could do. This watches your live 5h/7d limits and flips Claude Code into a frontier-judges / cheap-executes profile before you hit the wall — and tracks the burn so you can see the savings. |
+| [explainer-diagrams](skills/explainer-diagrams/) | "Make a diagram" gets you a generic flowchart or a table with colored borders, and every one looks different. This gives the agent one visual grammar, seven proven scene shapes with finished examples, a puppeteer harness that shoots each diagram to a font-verified PNG, and a by-eye checklist — so explanations come out as pictures that read at a glance and match each other. |
 
 ## How to install a skill
 
