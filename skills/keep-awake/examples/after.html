@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>keep-awake — after</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { background: #d9d9d9; margin: 40px; font-family: ui-monospace, Menlo, monospace; }
+  #shot1 { width: 1100px; margin: 0 auto; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,.25); }
+  .titlebar { height: 34px; background: #1e1e1e; border-bottom: 1px solid rgba(255,255,255,.08); display: flex; align-items: center; padding: 0 14px; position: relative; }
+  .dot { width: 12px; height: 12px; border-radius: 50%; margin-right: 8px; }
+  .dot.red { background: #ff5f57; }
+  .dot.yellow { background: #febc2e; }
+  .dot.green { background: #28c840; }
+  .titletext { position: absolute; left: 0; right: 0; text-align: center; color: #8a8a8a; font-size: 12px; font-family: ui-monospace, Menlo, monospace; pointer-events: none; }
+  .term-body { background: #1e1e1e; padding: 22px 26px; }
+  pre#term { margin: 0; color: #d4d4d4; font-family: ui-monospace, Menlo, monospace; font-size: 14px; line-height: 1.55; white-space: pre-wrap; word-break: break-word; }
+  .dim { color: #8a8a8a; }
+  .green { color: #28c840; }
+  .yellow { color: #e5c07b; }
+  .blue { color: #61afef; }
+  .user { color: #ffffff; font-weight: bold; }
+</style>
+</head>
+<body>
+<div id="shot1">
+  <div class="titlebar">
+    <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+    <span class="titletext">keep-awake — after</span>
+  </div>
+  <div class="term-body"><pre id="term"><span class="dim">~/projects/api-service · overnight test run, keep-awake armed</span>
+<span class="user">&gt; ~/.claude/skills/keep-awake/keepawake.sh on 10</span>
+<span class="green">guard: RUNNING (pid 41213, ~600m left) — detached, survives session interrupts</span>
+<span class="green">sleep assertion: HELD (1 caffeinate process(es))</span>
+Now drawing from &#x27;Battery Power&#x27;
+<span class="dim">CAVEAT: lid-close on battery sleeps the Mac regardless — leave the lid open, plug in if possible.</span>
+
+<span class="user">&gt; ./scripts/run-full-suite.sh --watch --retry-on-fail &amp;</span>
+<span class="user">&gt; disown</span>
+
+<span class="blue">●</span> Running 1,842 tests across 6 packages...
+<span class="blue">●</span> 02:47 — 640/1,842 passed, 0 failed
+<span class="dim"># lid stayed open, display dark, machine held awake through the night</span>
+<span class="blue">●</span> 09:05 — 1,842/1,842 passed, 0 failed
+<span class="green">✓ suite complete in 6h18m — no interruption</span>
+
+<span class="user">&gt; ~/.claude/skills/keep-awake/keepawake.sh status</span>
+<span class="green">guard: RUNNING (pid 41213, ~15m left) — detached, survives session interrupts</span>
+<span class="green">sleep assertion: HELD (1 caffeinate process(es))</span></pre></div>
+</div>
+</body>
+</html>

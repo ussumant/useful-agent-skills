@@ -1,0 +1,13 @@
+# ~/projects/api-service · overnight test run
+> ./scripts/run-full-suite.sh --watch --retry-on-fail &
+> disown
+
+{blue}●{/} Running 1,842 tests across 6 packages...
+{blue}●{/} 02:47 — 640/1,842 passed, 0 failed
+
+{dim}# lid closed at 03:22, machine left on battery{/}
+{yellow}⚠ System entered sleep — process suspended{/}
+
+{dim}# lid opened at 09:40{/}
+{yellow}⚠ Run stalled 6h18m — connection timeouts cascaded, suite marked FAILED{/}
+{dim}# 1,202 of 1,842 tests never ran{/}

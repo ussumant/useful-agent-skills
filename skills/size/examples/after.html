@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>After — with the size skill</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { background: #d9d9d9; margin: 40px; font-family: ui-monospace, Menlo, monospace; }
+  #shot1 { width: 1100px; margin: 0 auto; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,.25); }
+  .titlebar { height: 34px; background: #1e1e1e; border-bottom: 1px solid rgba(255,255,255,.08); display: flex; align-items: center; padding: 0 14px; position: relative; }
+  .dot { width: 12px; height: 12px; border-radius: 50%; margin-right: 8px; }
+  .dot.red { background: #ff5f57; }
+  .dot.yellow { background: #febc2e; }
+  .dot.green { background: #28c840; }
+  .titletext { position: absolute; left: 0; right: 0; text-align: center; color: #8a8a8a; font-size: 12px; font-family: ui-monospace, Menlo, monospace; pointer-events: none; }
+  .term-body { background: #1e1e1e; padding: 22px 26px; }
+  pre#term { margin: 0; color: #d4d4d4; font-family: ui-monospace, Menlo, monospace; font-size: 14px; line-height: 1.55; white-space: pre-wrap; word-break: break-word; }
+  .dim { color: #8a8a8a; }
+  .green { color: #28c840; }
+  .yellow { color: #e5c07b; }
+  .blue { color: #61afef; }
+  .user { color: #ffffff; font-weight: bold; }
+</style>
+</head>
+<body>
+<div id="shot1">
+  <div class="titlebar">
+    <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+    <span class="titletext">After — with the size skill</span>
+  </div>
+  <div class="term-body"><pre id="term"><span class="dim">~/projects/reports-app · claude-opus-5</span>
+<span class="user">&gt; size adding CSV export to the reports page</span>
+
+<span class="blue">●</span> Reuse scan:
+<span class="dim">  - repo: pdf export already streams report rows in src/export/pdf.js</span>
+<span class="dim">  - prior work: no earlier CSV attempt found in closed PRs</span>
+<span class="dim">  - open source: csv-stringify covers formatting, thin wrapper needed</span>
+<span class="blue">●</span> Unknowns: 2 — gate triggered
+<span class="dim">  1. which report types must export? (ask product)</span>
+<span class="dim">  2. does CSV need the same row-level auth filter as PDF? (read auth.js)</span>
+
+Factor            Score  Why
+Surface area        2   export module + one new route
+Uncertainty          3   gate triggered (2 unknowns)
+Integration risk     1   fresh base, no open-PR overlap
+Verification cost    1   offline tests cover row formatting
+Review load          2   one reviewer, likely two rounds
+
+SIZE: M (sum 9, floor-bumped by Uncertainty=3)
+Builder: M · Reviewer: S
+
+## Predicted
+Size M · 2 milestones · builder M · reviewer S · 2 review rounds · 3 days
+
+Milestones:
+0. Discovery spike — done: one-page answer on report scope + auth reuse
+1. CSV export (post-spike) — size M — done: export button on reports page,
+   downloads a correctly-filtered CSV — PR: export route + tests —
+   depends on: milestone 0
+
+<span class="green">Ready to track this on a board? Say the word.</span></pre></div>
+</div>
+</body>
+</html>

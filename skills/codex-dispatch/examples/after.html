@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>codex dispatch — after</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { background: #d9d9d9; margin: 40px; font-family: ui-monospace, Menlo, monospace; }
+  #shot1 { width: 1100px; margin: 0 auto; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,.25); }
+  .titlebar { height: 34px; background: #1e1e1e; border-bottom: 1px solid rgba(255,255,255,.08); display: flex; align-items: center; padding: 0 14px; position: relative; }
+  .dot { width: 12px; height: 12px; border-radius: 50%; margin-right: 8px; }
+  .dot.red { background: #ff5f57; }
+  .dot.yellow { background: #febc2e; }
+  .dot.green { background: #28c840; }
+  .titletext { position: absolute; left: 0; right: 0; text-align: center; color: #8a8a8a; font-size: 12px; font-family: ui-monospace, Menlo, monospace; pointer-events: none; }
+  .term-body { background: #1e1e1e; padding: 22px 26px; }
+  pre#term { margin: 0; color: #d4d4d4; font-family: ui-monospace, Menlo, monospace; font-size: 14px; line-height: 1.55; white-space: pre-wrap; word-break: break-word; }
+  .dim { color: #8a8a8a; }
+  .green { color: #28c840; }
+  .yellow { color: #e5c07b; }
+  .blue { color: #61afef; }
+  .user { color: #ffffff; font-weight: bold; }
+</style>
+</head>
+<body>
+<div id="shot1">
+  <div class="titlebar">
+    <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+    <span class="titletext">codex dispatch — after</span>
+  </div>
+  <div class="term-body"><pre id="term"><span class="dim">~/projects/shop-api · agent session</span>
+<span class="user">&gt; review the auth-refactor PR with codex before I open it</span>
+
+<span class="blue">●</span> ./dispatch.sh run review &quot;check the auth changes&quot; &lt; /dev/null
+codex-dispatch: diff vs main — 4200 changed lines (cap 1500)
+<span class="yellow">codex-dispatch: diff cap — 4200 changed lines vs main exceeds</span>
+<span class="yellow">CODEX_DISPATCH_DIFF_CAP=1500. Split the review or override.</span>
+<span class="dim">  (exit 3 — nothing dispatched, nothing spent)</span>
+
+<span class="user">&gt; split the two commits into separate branches, review each</span>
+
+<span class="blue">●</span> ./dispatch.sh run review &quot;check the auth changes&quot; &lt; /dev/null
+codex-dispatch: diff vs main — 640 changed lines (cap 1500)
+<span class="dim">  under cap → dispatching, run detached so it survives the 10-min cap</span>
+<span class="green">DETACHED pid=48213 results=/tmp/codex-run-results log=/tmp/codex-run-results.log</span>
+<span class="dim">… polling for rc= …</span>
+<span class="green">rc=0 — review returned: 2 findings, both non-blocking</span>
+
+<span class="blue">●</span> ./dispatch.sh run review &quot;check the auth changes&quot; &lt; /dev/null
+<span class="yellow">codex-dispatch: one-review-per-push — a2f91c already reviewed on this</span>
+<span class="yellow">branch. Push a new commit, or override.</span>
+<span class="dim">  (exit 3 — same commit, no second charge for the same review)</span></pre></div>
+</div>
+</body>
+</html>

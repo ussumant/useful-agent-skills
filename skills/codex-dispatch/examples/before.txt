@@ -1,0 +1,13 @@
+# ~/projects/shop-api · agent session
+> review the auth-refactor PR with codex before I open it
+
+{blue}●{/} Running: codex review "check the auth changes" < /dev/null
+{dim}  (foreground, no auth check, no diff-size check first){/}
+
+{dim}… 4 min … 7 min … 9 min …{/}
+{yellow}⚠ tool call exceeded the 10 minute limit — process tree killed (rc 143){/}
+
+# the diff was 4,200 lines across two unrelated commits — codex was
+# still working through it when the timeout hit
+# nothing was returned: no review, no partial output, tokens already spent
+{yellow}✗ codex review lost — no output, re-run from scratch or skip review{/}

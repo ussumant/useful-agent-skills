@@ -1,0 +1,15 @@
+# github.com/example-org/shop-api · PR #412
+> a reviewer left 4 comments on your PR. address them.
+
+{blue}●{/} Comment 1 (line 88, payment.py): "no null check on `customer.card` before charge"
+{blue}●{/} Comment 2 (general): "this PR has no test for the refund path"
+{blue}●{/} Comment 3 (line 12, payment.py): "rename `x` to something readable"
+{blue}●{/} Comment 4 (general): "charge_customer() does a full table scan, should index on customer_id"
+
+{green}Reply →{/} Comment 1: "done 👍"
+{green}Reply →{/} Comment 2: "done 👍"
+{green}Reply →{/} Comment 3: "done 👍"
+
+# no evidence attached to any reply — no file:line, no test name, no output
+# comment 4 (the perf concern) never gets a reply at all
+# reviewer has to scroll 3 separate threads to see what was even touched

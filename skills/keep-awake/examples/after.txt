@@ -1,0 +1,19 @@
+# ~/projects/api-service · overnight test run, keep-awake armed
+> ~/.claude/skills/keep-awake/keepawake.sh on 10
+{green}guard: RUNNING (pid 41213, ~600m left) — detached, survives session interrupts{/}
+{green}sleep assertion: HELD (1 caffeinate process(es)){/}
+Now drawing from 'Battery Power'
+# CAVEAT: lid-close on battery sleeps the Mac regardless — leave the lid open, plug in if possible.
+
+> ./scripts/run-full-suite.sh --watch --retry-on-fail &
+> disown
+
+{blue}●{/} Running 1,842 tests across 6 packages...
+{blue}●{/} 02:47 — 640/1,842 passed, 0 failed
+{dim}# lid stayed open, display dark, machine held awake through the night{/}
+{blue}●{/} 09:05 — 1,842/1,842 passed, 0 failed
+{green}✓ suite complete in 6h18m — no interruption{/}
+
+> ~/.claude/skills/keep-awake/keepawake.sh status
+{green}guard: RUNNING (pid 41213, ~15m left) — detached, survives session interrupts{/}
+{green}sleep assertion: HELD (1 caffeinate process(es)){/}

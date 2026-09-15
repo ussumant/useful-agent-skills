@@ -1,0 +1,15 @@
+$ agent: verify the deployed landing page renders after the deploy
+
+> calling browser tool: navigate_page("https://example-app.dev")
+✗ error: no browser session connected
+
+> retrying navigate_page("https://example-app.dev")
+✗ error: no browser session connected
+
+> retrying navigate_page("https://example-app.dev")
+✗ error: no browser session connected
+
+> giving up after 3 attempts on the same channel
+
+agent: I could not verify the deployed page — the browser tool is not
+available. Please check manually.

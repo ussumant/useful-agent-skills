@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Before: scattered replies</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { background: #d9d9d9; margin: 40px; font-family: ui-monospace, Menlo, monospace; }
+  #shot1 { width: 1100px; margin: 0 auto; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,.25); }
+  .titlebar { height: 34px; background: #1e1e1e; border-bottom: 1px solid rgba(255,255,255,.08); display: flex; align-items: center; padding: 0 14px; position: relative; }
+  .dot { width: 12px; height: 12px; border-radius: 50%; margin-right: 8px; }
+  .dot.red { background: #ff5f57; }
+  .dot.yellow { background: #febc2e; }
+  .dot.green { background: #28c840; }
+  .titletext { position: absolute; left: 0; right: 0; text-align: center; color: #8a8a8a; font-size: 12px; font-family: ui-monospace, Menlo, monospace; pointer-events: none; }
+  .term-body { background: #1e1e1e; padding: 22px 26px; }
+  pre#term { margin: 0; color: #d4d4d4; font-family: ui-monospace, Menlo, monospace; font-size: 14px; line-height: 1.55; white-space: pre-wrap; word-break: break-word; }
+  .dim { color: #8a8a8a; }
+  .green { color: #28c840; }
+  .yellow { color: #e5c07b; }
+  .blue { color: #61afef; }
+  .user { color: #ffffff; font-weight: bold; }
+</style>
+</head>
+<body>
+<div id="shot1">
+  <div class="titlebar">
+    <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+    <span class="titletext">Before: scattered replies</span>
+  </div>
+  <div class="term-body"><pre id="term"><span class="dim">github.com/example-org/shop-api · PR #412</span>
+<span class="user">&gt; a reviewer left 4 comments on your PR. address them.</span>
+
+<span class="blue">●</span> Comment 1 (line 88, payment.py): &quot;no null check on `customer.card` before charge&quot;
+<span class="blue">●</span> Comment 2 (general): &quot;this PR has no test for the refund path&quot;
+<span class="blue">●</span> Comment 3 (line 12, payment.py): &quot;rename `x` to something readable&quot;
+<span class="blue">●</span> Comment 4 (general): &quot;charge_customer() does a full table scan, should index on customer_id&quot;
+
+<span class="green">Reply →</span> Comment 1: &quot;done 👍&quot;
+<span class="green">Reply →</span> Comment 2: &quot;done 👍&quot;
+<span class="green">Reply →</span> Comment 3: &quot;done 👍&quot;
+
+<span class="dim">no evidence attached to any reply — no file:line, no test name, no output</span>
+<span class="dim">comment 4 (the perf concern) never gets a reply at all</span>
+<span class="dim">reviewer has to scroll 3 separate threads to see what was even touched</span></pre></div>
+</div>
+</body>
+</html>

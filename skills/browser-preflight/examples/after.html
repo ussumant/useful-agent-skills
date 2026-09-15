@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>after: browser-preflight</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { background: #d9d9d9; margin: 40px; font-family: ui-monospace, Menlo, monospace; }
+  #shot1 { width: 1100px; margin: 0 auto; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,.25); }
+  .titlebar { height: 34px; background: #1e1e1e; border-bottom: 1px solid rgba(255,255,255,.08); display: flex; align-items: center; padding: 0 14px; position: relative; }
+  .dot { width: 12px; height: 12px; border-radius: 50%; margin-right: 8px; }
+  .dot.red { background: #ff5f57; }
+  .dot.yellow { background: #febc2e; }
+  .dot.green { background: #28c840; }
+  .titletext { position: absolute; left: 0; right: 0; text-align: center; color: #8a8a8a; font-size: 12px; font-family: ui-monospace, Menlo, monospace; pointer-events: none; }
+  .term-body { background: #1e1e1e; padding: 22px 26px; }
+  pre#term { margin: 0; color: #d4d4d4; font-family: ui-monospace, Menlo, monospace; font-size: 14px; line-height: 1.55; white-space: pre-wrap; word-break: break-word; }
+  .dim { color: #8a8a8a; }
+  .green { color: #28c840; }
+  .yellow { color: #e5c07b; }
+  .blue { color: #61afef; }
+  .user { color: #ffffff; font-weight: bold; }
+</style>
+</head>
+<body>
+<div id="shot1">
+  <div class="titlebar">
+    <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+    <span class="titletext">after: browser-preflight</span>
+  </div>
+  <div class="term-body"><pre id="term">$ agent: verify the deployed landing page renders after the deploy
+
+<span class="user">&gt; running browser-preflight</span>
+<span class="user">&gt; probe 1/3: browser extension channel -&gt; tabs_context ... dead (not connected)</span>
+<span class="user">&gt; probe 2/3: computer-use channel -&gt; screenshot ... live</span>
+
+channel = computer-use · fallback = headless browser MCP · if all dead = URL + manual steps
+
+<span class="user">&gt; navigating to https://example-app.dev</span>
+<span class="user">&gt; screenshot captured: hero renders, nav renders, no console errors</span>
+
+agent: Deployed landing page verified via computer-use — hero and nav
+render correctly, no console errors.
+
+---
+
+$ agent: verify the deployed landing page renders after the deploy
+  (all channels dead this time)
+
+<span class="user">&gt; running browser-preflight</span>
+<span class="user">&gt; probe 1/3: browser extension channel -&gt; tabs_context ... dead (not connected)</span>
+<span class="user">&gt; probe 2/3: computer-use channel -&gt; screenshot ... dead (locked by another session)</span>
+<span class="user">&gt; probe 3/3: headless browser MCP -&gt; ping ... dead (not installed)</span>
+
+channel = none · fallback = none · if all dead = degraded deliverable
+
+agent: degraded deliverable — no live browser channel this session.
+Please verify manually:
+  1. Open https://example-app.dev in your own browser
+  2. Confirm the hero section and nav render
+  3. Open devtools -&gt; Console, confirm no red errors
+  4. Reload once to confirm it&#x27;s not a cache artifact
+
+(Page source fetched and checked separately: title tag and hero markup
+are present in the raw HTML, so the deploy at least shipped content.)</pre></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "path": "skills/size/examples/after.html",
+  "viewport": {
+    "width": 1300,
+    "height": 900,
+    "deviceScaleFactor": 2
+  },
+  "steps": [
+    {
+      "type": "wait",
+      "ms": 150
+    },
+    {
+      "type": "shot",
+      "selector": "#shot1",
+      "path": "skills/size/examples/after.png"
+    }
+  ]
+}

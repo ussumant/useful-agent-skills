@@ -1,0 +1,19 @@
+{
+  "path": "/ABS/PATH/TO/useful-agent-skills/skills/codex-dispatch/examples/after.html",
+  "viewport": {
+    "width": 1300,
+    "height": 900,
+    "deviceScaleFactor": 2
+  },
+  "steps": [
+    {
+      "type": "wait",
+      "ms": 150
+    },
+    {
+      "type": "shot",
+      "selector": "#shot1",
+      "path": "/ABS/PATH/TO/useful-agent-skills/skills/codex-dispatch/examples/after.png"
+    }
+  ]
+}

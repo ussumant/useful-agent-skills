@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>After: one structured response</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { background: #d9d9d9; margin: 40px; font-family: ui-monospace, Menlo, monospace; }
+  #shot1 { width: 1100px; margin: 0 auto; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,.25); }
+  .titlebar { height: 34px; background: #1e1e1e; border-bottom: 1px solid rgba(255,255,255,.08); display: flex; align-items: center; padding: 0 14px; position: relative; }
+  .dot { width: 12px; height: 12px; border-radius: 50%; margin-right: 8px; }
+  .dot.red { background: #ff5f57; }
+  .dot.yellow { background: #febc2e; }
+  .dot.green { background: #28c840; }
+  .titletext { position: absolute; left: 0; right: 0; text-align: center; color: #8a8a8a; font-size: 12px; font-family: ui-monospace, Menlo, monospace; pointer-events: none; }
+  .term-body { background: #1e1e1e; padding: 22px 26px; }
+  pre#term { margin: 0; color: #d4d4d4; font-family: ui-monospace, Menlo, monospace; font-size: 14px; line-height: 1.55; white-space: pre-wrap; word-break: break-word; }
+  .dim { color: #8a8a8a; }
+  .green { color: #28c840; }
+  .yellow { color: #e5c07b; }
+  .blue { color: #61afef; }
+  .user { color: #ffffff; font-weight: bold; }
+</style>
+</head>
+<body>
+<div id="shot1">
+  <div class="titlebar">
+    <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+    <span class="titletext">After: one structured response</span>
+  </div>
+  <div class="term-body"><pre id="term"><span class="dim">github.com/example-org/shop-api · PR #412</span>
+<span class="user">&gt; a reviewer left 4 comments on your PR. address them.</span>
+
+<span class="blue">●</span> Reading all 4 review comments and the current diff at HEAD (a3f9c1e)
+<span class="blue">●</span> Fixing the null check, adding the refund test, renaming the variable
+<span class="blue">●</span> Running the suite and pricing out the table-scan claim before replying
+
+<span class="green">Posted →</span> ONE comment, all 4 items, reviewer&#x27;s order:
+
+## Response to review @ a3f9c1e (parent 7b2e04d)
+
+**1. &quot;no null check on `customer.card`&quot;** — <span class="green">FIXED</span> at `payment.py:88`.
+   Evidence: `test_charge_customer_no_card` added, passes.
+
+**2. &quot;no test for the refund path&quot;** — <span class="green">FIXED</span> at `tests/test_payment.py:140`.
+   Evidence: `test_refund_full_amount` — 1 passed.
+
+**3. &quot;rename `x`&quot;** — <span class="green">FIXED</span> at `payment.py:12`. `x` → `pending_charge`.
+
+**4. &quot;full table scan on charge_customer(), should index&quot;** — <span class="yellow">DISCLOSED</span>.
+   No index added this PR — table is &lt;500 rows in prod today, confirmed via
+   `SELECT count(*)`. Tracked as a follow-up if row count grows past 50k.
+
+### Evidence
+Full suite at a3f9c1e: 212 passed / 0 failed.
+
+<span class="dim">every item has a disposition, a file:line, and evidence — one comment, no scroll</span></pre></div>
+</div>
+</body>
+</html>

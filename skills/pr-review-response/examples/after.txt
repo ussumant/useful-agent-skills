@@ -1,0 +1,27 @@
+# github.com/example-org/shop-api · PR #412
+> a reviewer left 4 comments on your PR. address them.
+
+{blue}●{/} Reading all 4 review comments and the current diff at HEAD (a3f9c1e)
+{blue}●{/} Fixing the null check, adding the refund test, renaming the variable
+{blue}●{/} Running the suite and pricing out the table-scan claim before replying
+
+{green}Posted →{/} ONE comment, all 4 items, reviewer's order:
+
+## Response to review @ a3f9c1e (parent 7b2e04d)
+
+**1. "no null check on `customer.card`"** — {green}FIXED{/} at `payment.py:88`.
+   Evidence: `test_charge_customer_no_card` added, passes.
+
+**2. "no test for the refund path"** — {green}FIXED{/} at `tests/test_payment.py:140`.
+   Evidence: `test_refund_full_amount` — 1 passed.
+
+**3. "rename `x`"** — {green}FIXED{/} at `payment.py:12`. `x` → `pending_charge`.
+
+**4. "full table scan on charge_customer(), should index"** — {yellow}DISCLOSED{/}.
+   No index added this PR — table is <500 rows in prod today, confirmed via
+   `SELECT count(*)`. Tracked as a follow-up if row count grows past 50k.
+
+### Evidence
+Full suite at a3f9c1e: 212 passed / 0 failed.
+
+# every item has a disposition, a file:line, and evidence — one comment, no scroll

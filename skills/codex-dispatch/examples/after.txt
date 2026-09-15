@@ -1,0 +1,22 @@
+# ~/projects/shop-api · agent session
+> review the auth-refactor PR with codex before I open it
+
+{blue}●{/} ./dispatch.sh run review "check the auth changes" < /dev/null
+codex-dispatch: diff vs main — 4200 changed lines (cap 1500)
+{yellow}codex-dispatch: diff cap — 4200 changed lines vs main exceeds{/}
+{yellow}CODEX_DISPATCH_DIFF_CAP=1500. Split the review or override.{/}
+{dim}  (exit 3 — nothing dispatched, nothing spent){/}
+
+> split the two commits into separate branches, review each
+
+{blue}●{/} ./dispatch.sh run review "check the auth changes" < /dev/null
+codex-dispatch: diff vs main — 640 changed lines (cap 1500)
+{dim}  under cap → dispatching, run detached so it survives the 10-min cap{/}
+{green}DETACHED pid=48213 results=/tmp/codex-run-results log=/tmp/codex-run-results.log{/}
+{dim}… polling for rc= …{/}
+{green}rc=0 — review returned: 2 findings, both non-blocking{/}
+
+{blue}●{/} ./dispatch.sh run review "check the auth changes" < /dev/null
+{yellow}codex-dispatch: one-review-per-push — a2f91c already reviewed on this{/}
+{yellow}branch. Push a new commit, or override.{/}
+{dim}  (exit 3 — same commit, no second charge for the same review){/}

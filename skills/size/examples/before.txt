@@ -1,0 +1,13 @@
+# ~/projects/reports-app · claude-opus-5
+> add CSV export to the reports page, how big is this?
+
+{blue}●{/} That should take about a day. It's mostly a button and a
+{blue}●{/} download handler, plus a bit of formatting work on the backend.
+
+> ok go ahead and build it
+
+# no reuse check, no unknowns named, no factor scores
+# "about a day" turns out to mean: which report? which columns?
+# does it need to match the existing PDF export's auth checks?
+# three days later, still open, two review rounds, scope crept
+# into a whole export-format picker nobody scoped up front
