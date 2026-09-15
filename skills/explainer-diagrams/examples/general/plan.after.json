@@ -1,10 +1,10 @@
 {
-  "path": "/Users/sumant/dev/useful-agent-skills/skills/explainer-diagrams/examples/general/after.html",
+  "path": "/ABS/PATH/TO/useful-agent-skills/skills/explainer-diagrams/examples/general/after.html",
   "viewport": { "width": 1300, "height": 1000, "deviceScaleFactor": 2 },
   "steps": [
     { "type": "waitFor", "expr": "document.fonts.status === 'loaded'", "timeoutMs": 15000 },
     { "type": "wait", "ms": 250 },
     { "type": "waitFor", "expr": "document.fonts.check('1em \"Pixelify Sans\"')", "timeoutMs": 15000 },
-    { "type": "shot", "selector": "#shot1", "path": "/Users/sumant/dev/useful-agent-skills/skills/explainer-diagrams/examples/after.png" }
+    { "type": "shot", "selector": "#shot1", "path": "/ABS/PATH/TO/useful-agent-skills/skills/explainer-diagrams/examples/after.png" }
   ]
 }

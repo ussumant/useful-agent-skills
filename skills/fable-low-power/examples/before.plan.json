@@ -1,5 +1,5 @@
 {
-  "path": "/Users/sumant/dev/useful-agent-skills/skills/fable-low-power/examples/before.html",
+  "path": "/ABS/PATH/TO/useful-agent-skills/skills/fable-low-power/examples/before.html",
   "viewport": {
     "width": 1300,
     "height": 900,
@@ -13,7 +13,7 @@
     {
       "type": "shot",
       "selector": "#shot1",
-      "path": "/Users/sumant/dev/useful-agent-skills/skills/fable-low-power/examples/before.png"
+      "path": "/ABS/PATH/TO/useful-agent-skills/skills/fable-low-power/examples/before.png"
     }
   ]
 }

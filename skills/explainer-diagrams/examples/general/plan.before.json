@@ -1,8 +1,8 @@
 {
-  "path": "/Users/sumant/dev/useful-agent-skills/skills/explainer-diagrams/examples/general/before.html",
+  "path": "/ABS/PATH/TO/useful-agent-skills/skills/explainer-diagrams/examples/general/before.html",
   "viewport": { "width": 1300, "height": 1000, "deviceScaleFactor": 2 },
   "steps": [
     { "type": "wait", "ms": 150 },
-    { "type": "shot", "selector": "#shot1", "path": "/Users/sumant/dev/useful-agent-skills/skills/explainer-diagrams/examples/before.png" }
+    { "type": "shot", "selector": "#shot1", "path": "/ABS/PATH/TO/useful-agent-skills/skills/explainer-diagrams/examples/before.png" }
   ]
 }
