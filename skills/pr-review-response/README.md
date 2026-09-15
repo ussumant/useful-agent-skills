@@ -54,7 +54,7 @@ Or with `npx`:
 npx skills add ussumant/useful-agent-skills --skill pr-review-response --global --yes
 ```
 
-No config, no hooks, no dependencies — it's a instructions-only skill. Once
+No config, no hooks, no dependencies — it's an instructions-only skill. Once
 installed, it triggers automatically on phrases like "respond to the
 review", "reply to reviewer", or "address review comments".
 

@@ -4,6 +4,11 @@ Skills for Claude Code and other coding agents that I use every day,
 published only after they have survived real work. Every skill ships with a
 **before / after** so you can see what it changes before you install anything.
 
+[![GitHub stars](https://img.shields.io/github/stars/ussumant/useful-agent-skills?style=flat&label=stars)](https://github.com/ussumant/useful-agent-skills/stargazers)
+[![Latest release](https://img.shields.io/github/v/release/ussumant/useful-agent-skills?style=flat&label=release)](https://github.com/ussumant/useful-agent-skills/releases)
+[![Skills](https://img.shields.io/badge/skills-7-blue?style=flat)](#skills)
+[![License](https://img.shields.io/github/license/ussumant/useful-agent-skills?style=flat)](LICENSE)
+
 ⭐ **Star** the repo · **Watch → Custom → Releases** to get one notification per new skill.
 
 ## Skills
