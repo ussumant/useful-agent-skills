@@ -28,6 +28,23 @@ or until the week rolls over.
 📈 Frontier burn: today 3 frontier sessions · $41.20 · 12.3k tok out · 7d $209 · workers today $6.10
 ```
 
+## Before / after
+
+The same request in a session that is 62% into its 5-hour window. Both
+images are renderings of a terminal (the skill's banner is its real output
+format with the example numbers from above; the session lines are
+illustrative). Transcripts in [`examples/`](examples/).
+
+Before: every step runs on the frontier model, and the first warning is the
+lockout.
+
+![before](examples/before.png)
+
+After: the banner fires at session start, the frontier model plans and
+judges, and the reads, builds, and drafts go to cheaper subagents.
+
+![after](examples/after.png)
+
 ## How to install
 
 Paste this into Claude Code (or any coding agent):

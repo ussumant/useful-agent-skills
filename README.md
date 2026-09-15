@@ -1,48 +1,72 @@
 # useful-agent-skills
 
-Practical skills for Claude Code and other coding agents, published as they
-get battle-tested in daily use. If it's in the table, I use it every day.
+Skills for Claude Code and other coding agents that I use every day,
+published only after they have survived real work. Every skill ships with a
+**before / after** so you can see what it changes before you install anything.
 
-⭐ **Star** the repo and **Watch → Custom → Releases** — every new skill
-ships as a release, so you get notified when a new one drops.
+⭐ **Star** the repo · **Watch → Custom → Releases** to get one notification per new skill.
 
 ## Skills
 
-| Skill | Problem it solves |
+### explainer-diagrams
+
+"Make a diagram" gets you a generic flowchart or a table with colored borders,
+and every one looks different. This gives the agent one visual grammar, seven
+proven scene shapes with finished examples, and a harness that shoots each
+diagram to a font-verified PNG. Explanations come out as pictures that read at
+a glance and match each other.
+
+| before | after |
 |---|---|
-| [fable-low-power](skills/fable-low-power/) | Your frontier-model quota burns down on greps and builds a cheaper model could do. This watches your live 5h/7d limits and flips Claude Code into a frontier-judges / cheap-executes profile before you hit the wall — and tracks the burn so you can see the savings. |
-| [explainer-diagrams](skills/explainer-diagrams/) | "Make a diagram" gets you a generic flowchart or a table with colored borders, and every one looks different. This gives the agent one visual grammar, seven proven scene shapes with finished examples, a puppeteer harness that shoots each diagram to a font-verified PNG, and a by-eye checklist — so explanations come out as pictures that read at a glance and match each other. |
+| ![before](skills/explainer-diagrams/examples/before.png) | ![after](skills/explainer-diagrams/examples/after.png) |
 
-## How to install a skill
+[Read more →](skills/explainer-diagrams/)
 
-The easiest way is to paste this into Claude Code or your favorite coding
-agent:
+### fable-low-power
+
+Your frontier-model quota burns down on greps, builds, and drafts a cheaper
+model could do, and the first warning is the lockout. This watches your live
+5-hour and 7-day limits, flips Claude Code into a frontier-judges /
+cheap-executes profile before you hit the wall, and tracks the burn so you can
+see the savings.
+
+| before | after |
+|---|---|
+| ![before](skills/fable-low-power/examples/before.png) | ![after](skills/fable-low-power/examples/after.png) |
+
+[Read more →](skills/fable-low-power/)
+
+## Install
+
+Paste into Claude Code or any coding agent:
 
 ```text
-Install the fable-low-power skill globally from https://github.com/ussumant/useful-agent-skills and wire it up per its README
+Install the <skill-name> skill globally from https://github.com/ussumant/useful-agent-skills and read its README
 ```
 
-You can also install with `npx`:
+With `npx`:
 
 ```sh
-npx skills add ussumant/useful-agent-skills --skill fable-low-power --global --yes
+npx skills add ussumant/useful-agent-skills --skill <skill-name> --global --yes
 ```
 
-Or fully manually:
+By hand:
 
 ```sh
 git clone https://github.com/ussumant/useful-agent-skills.git
-cp -r useful-agent-skills/skills/<name> ~/.claude/skills/<name>
+cp -r useful-agent-skills/skills/<skill-name> ~/.claude/skills/<skill-name>
 ```
 
-Some skills need a line or two of `settings.json` wiring (hooks, statusline)
-— each skill's own `README.md` has the exact snippet.
+A few skills need a line of `settings.json` wiring (a hook or a statusline);
+the skill's own README has the exact snippet.
 
 ## What's inside a skill
 
-Every skill is a self-contained folder: `SKILL.md` (the instructions your
-agent loads) plus any scripts it needs. Plain bash + python3 stdlib —
-nothing to install, nothing phones home.
+One self-contained folder: `SKILL.md` (what the agent loads), the scripts it
+needs, and `examples/before.png` + `after.png` on a general task. Plain bash,
+python3 stdlib, or node with the dependency named. Nothing phones home.
+
+Adding one? The bar is in [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
 

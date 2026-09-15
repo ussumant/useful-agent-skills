@@ -1,0 +1,11 @@
+# ~/projects/shop-api · claude-opus-5
+> run the full test suite, fix every failure, and update the docs
+
+{blue}●{/} Reading 41 files across src/ and tests/…
+{blue}●{/} grep -rn "PaymentIntent" src/ · 3 passes
+{blue}●{/} npm run build · npm test · 2 runs
+{blue}●{/} Drafting docs/payments.md (v1 · v2 · v3)
+
+# every one of these steps ran on the frontier model
+# 5h window: 94% · 7d window: 81% · no warning shown
+{yellow}⚠ Claude usage limit reached. Try again after the window resets.{/}

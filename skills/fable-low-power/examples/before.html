@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Claude Code — without the skill</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { background: #d9d9d9; margin: 40px; font-family: ui-monospace, Menlo, monospace; }
+  #shot1 { width: 1100px; margin: 0 auto; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,.25); }
+  .titlebar { height: 34px; background: #1e1e1e; border-bottom: 1px solid rgba(255,255,255,.08); display: flex; align-items: center; padding: 0 14px; position: relative; }
+  .dot { width: 12px; height: 12px; border-radius: 50%; margin-right: 8px; }
+  .dot.red { background: #ff5f57; }
+  .dot.yellow { background: #febc2e; }
+  .dot.green { background: #28c840; }
+  .titletext { position: absolute; left: 0; right: 0; text-align: center; color: #8a8a8a; font-size: 12px; font-family: ui-monospace, Menlo, monospace; pointer-events: none; }
+  .term-body { background: #1e1e1e; padding: 22px 26px; }
+  pre#term { margin: 0; color: #d4d4d4; font-family: ui-monospace, Menlo, monospace; font-size: 14px; line-height: 1.55; white-space: pre-wrap; word-break: break-word; }
+  .dim { color: #8a8a8a; }
+  .green { color: #28c840; }
+  .yellow { color: #e5c07b; }
+  .blue { color: #61afef; }
+  .user { color: #ffffff; font-weight: bold; }
+</style>
+</head>
+<body>
+<div id="shot1">
+  <div class="titlebar">
+    <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+    <span class="titletext">Claude Code — without the skill</span>
+  </div>
+  <div class="term-body"><pre id="term"><span class="dim">~/projects/shop-api · claude-opus-5</span>
+<span class="user">&gt; run the full test suite, fix every failure, and update the docs</span>
+
+<span class="blue">●</span> Reading 41 files across src/ and tests/…
+<span class="blue">●</span> grep -rn &quot;PaymentIntent&quot; src/ · 3 passes
+<span class="blue">●</span> npm run build · npm test · 2 runs
+<span class="blue">●</span> Drafting docs/payments.md (v1 · v2 · v3)
+
+<span class="dim">every one of these steps ran on the frontier model</span>
+<span class="dim">5h window: 94% · 7d window: 81% · no warning shown</span>
+<span class="yellow">⚠ Claude usage limit reached. Try again after the window resets.</span></pre></div>
+</div>
+</body>
+</html>

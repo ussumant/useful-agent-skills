@@ -1,0 +1,14 @@
+# ~/projects/shop-api · claude-opus-5
+{yellow}🪫 FABLE LOW POWER MODE — ON. Limits: 5h 62% (resets Tue 23:00), 7d 78% (resets Mon 07:00).{/}
+{green}📈 Frontier burn: today 3 frontier sessions · $41.20 · 12.3k tok out · 7d $209 · workers today $6.10{/}
+# standing order while ON: the frontier model judges, plans, and issues verdicts only;
+# reads, searches, builds, fixes, and drafts route to subagents on cheaper models.
+
+> run the full test suite, fix every failure, and update the docs
+
+{blue}●{/} Frontier: plan → 3 tickets (test run · fix batch · docs draft)
+{dim}  ↳ worker (cheap model): npm test → 4 failures, digest returned{/}
+{dim}  ↳ worker (cheap model): fix batch · 4/4 green · diff returned{/}
+{dim}  ↳ worker (cheap model): docs/payments.md draft returned{/}
+{blue}●{/} Frontier: verdict on the diff · 2 nits · ship
+# frontier tokens this task: 1.9k out (was ~38k)

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>How a pull request gets merged — before</title>
+<style>
+  table { border-collapse: collapse; width: 100%; }
+  th, td { border: 1px solid #999; padding: 8px; text-align: left; }
+</style>
+</head>
+<body>
+<div id="shot1" style="width:1100px; padding:40px; background:#ffffff;">
+  <h2>How a pull request gets merged</h2>
+  <table>
+    <thead>
+      <tr><th>Step</th><th>What happens</th><th>Next</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Open</td><td>branch pushed, PR created</td><td>Review</td></tr>
+      <tr><td>Review</td><td>a reviewer reads the diff</td><td>Changes requested, or Approve</td></tr>
+      <tr><td>Changes requested</td><td>reviewer asks for edits</td><td>Open</td></tr>
+      <tr><td>Approve</td><td>at least one approval, checks green</td><td>Merge</td></tr>
+      <tr><td>Merge</td><td>squash or rebase onto main</td><td>&mdash;</td></tr>
+      <tr><td>Closed</td><td>reviewer or author closes without merging</td><td>&mdash;</td></tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>

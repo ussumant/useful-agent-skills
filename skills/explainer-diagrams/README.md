@@ -31,15 +31,23 @@ six different people made it.
 - **A QA checklist the agent must run by eye** on every PNG: arrowheads
   present, nothing crossing, nothing clipped, facts matching the source.
 
-Before, the same content as a styled table:
+## Before / after
+
+The same content, "how a pull request gets merged", the way an agent usually
+emits it (a table in a doc) and the way this skill emits it (a scene). Both
+rendered from the HTML in [`examples/general/`](examples/general/).
+
+Before:
 
 ![before](examples/before.png)
 
-After, as a scene in the grammar:
+After:
 
-![after](examples/severance-week/out/13-one-paragraph-five-days.png)
+![after](examples/after.png)
 
-More finished examples in [`examples/severance-week/out/`](examples/severance-week/out/).
+Seven more finished diagrams, from a longer write-up, in
+[`examples/severance-week/out/`](examples/severance-week/out/) with their
+source HTML and plan.
 
 ## How to install
 
