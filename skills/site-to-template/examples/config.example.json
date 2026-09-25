@@ -1,0 +1,5 @@
+{
+  "_note": "Landmarks are selectors on the SOURCE page. 'map' translates each to your clone's selector when the names differ.",
+  "landmarks": ["nav", "h1", ".sub", ".btn-primary", ".btn-secondary", ".sticker", ".features", ".card", ".card h3", ".pricing", ".pricing h2", ".plan", ".plan-price", "footer"],
+  "map": {}
+}

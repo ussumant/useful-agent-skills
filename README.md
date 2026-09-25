@@ -36,6 +36,20 @@ see the savings.
 
 [Read more →](skills/fable-low-power/)
 
+### site-to-template
+
+"Make it look like that site" ends in a rebuild from a screenshot that is
+wrong in every number and misses the interactive parts. This measures the
+source (computed styles, settled geometry, every interaction, sampled motion),
+rebuilds it section by section, and proves fidelity with box and style
+diffs, while always swapping in your own content.
+
+| before | after |
+|---|---|
+| ![before](skills/site-to-template/examples/before.png) | ![after](skills/site-to-template/examples/after.png) |
+
+[Read more →](skills/site-to-template/)
+
 ## Install
 
 Paste into Claude Code or any coding agent:
