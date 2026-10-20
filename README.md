@@ -36,6 +36,21 @@ see the savings.
 
 [Read more →](skills/fable-low-power/)
 
+### release-clip
+
+"Record a demo of it" gets you a raw screencast. It shows the whole window at
+1x, with no context, at the wrong speed, and GitHub won't play the mp4 in a
+README. This films the real feature live in a headless browser, at true speed.
+It cuts the footage into a 20–30 second story: a title card, numbered captions,
+eased zooms onto the proof, and an end card. You get an mp4 and poster for your
+site and a GIF for your README.
+
+| before | after |
+|---|---|
+| ![before](skills/release-clip/examples/before.png) | ![after](skills/release-clip/examples/after.png) |
+
+[Read more →](skills/release-clip/)
+
 ## Install
 
 Paste into Claude Code or any coding agent:

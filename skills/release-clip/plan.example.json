@@ -1,0 +1,128 @@
+{
+  "_note": "Copy next to your takes. Paths resolve from this file's folder. Segment t values are seconds into that segment; zoom keys are [t, zoom, cx, cy] with cx/cy as fractions of the frame.",
+  "out": "demo.mp4",
+  "poster": "demo-poster.png",
+  "poster_at": 0.5,
+  "gif": "demo.gif",
+  "width": 1600,
+  "ui_height": 1000,
+  "caption_height": 120,
+  "fade": 0.4,
+  "crf": 23,
+  "theme": {
+    "font_file": "fonts/PixelifySans[wght].ttf",
+    "display": "Pixelify Sans",
+    "paper": "#ffffff",
+    "ink": "#000000",
+    "text": "#3f3f3f",
+    "muted": "#767676",
+    "accent": "#d66b2f",
+    "dark": "#101722",
+    "dark_text": "#b9c0cc",
+    "line": "#d7d7d7"
+  },
+  "segments": [
+    {
+      "card": {
+        "title": "Your Tool",
+        "lead": "One sentence on what it does for the viewer.",
+        "small": "for <where it runs>"
+      },
+      "secs": 2.4
+    },
+    {
+      "take": "takes/A.mp4",
+      "in": 0.5,
+      "out": 8.3,
+      "captions": [
+        {
+          "text": "What the viewer sees in step one.",
+          "at": 0
+        }
+      ],
+      "zoom": [
+        [
+          0.6,
+          1,
+          0.5,
+          0.5
+        ],
+        [
+          1.6,
+          1.25,
+          0.59,
+          0.4
+        ]
+      ]
+    },
+    {
+      "card": {
+        "title": "The thing a camera can't film.",
+        "lead": "One line on what just happened off screen.",
+        "dark": true
+      },
+      "secs": 2.6
+    },
+    {
+      "take": "takes/B.mp4",
+      "in": 1.0,
+      "out": 12.5,
+      "captions": [
+        {
+          "text": "What the viewer sees next.",
+          "at": 0
+        },
+        {
+          "text": "The payoff, in one line.",
+          "at": 3.0
+        }
+      ],
+      "zoom": [
+        [
+          1.6,
+          1,
+          0.5,
+          0.5
+        ],
+        [
+          2.3,
+          1.9,
+          0.82,
+          0.875
+        ],
+        [
+          4.5,
+          1.9,
+          0.82,
+          0.875
+        ],
+        [
+          5.3,
+          1,
+          0.5,
+          0.5
+        ],
+        [
+          6.6,
+          1,
+          0.5,
+          0.5
+        ],
+        [
+          7.6,
+          1.25,
+          0.59,
+          0.4
+        ]
+      ]
+    },
+    {
+      "card": {
+        "title": "Your Tool",
+        "lead": "github.com/you/your-tool",
+        "small": "Free and open source (MIT)."
+      },
+      "secs": 3.0
+    }
+  ]
+}

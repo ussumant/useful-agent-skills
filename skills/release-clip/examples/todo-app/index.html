@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Todos</title>
+  <style>
+    :root { --ink: #1d2433; --muted: #7a8394; --line: #e6e8ee; --accent: #3b6cf6; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; background: #f4f5f8; font: 18px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif; color: var(--ink); display: grid; place-items: start center; }
+    main { width: 560px; margin-top: 96px; background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 32px 36px; box-shadow: 0 10px 30px rgba(20, 30, 60, .06); }
+    h1 { margin: 0 0 20px; font-size: 30px; letter-spacing: -.01em; }
+    form { display: flex; gap: 10px; }
+    input[type=text] { flex: 1; font: inherit; padding: 12px 14px; border: 1px solid var(--line); border-radius: 10px; outline: none; }
+    input[type=text]:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(59, 108, 246, .15); }
+    button { font: inherit; padding: 12px 18px; border: 0; border-radius: 10px; background: var(--accent); color: #fff; cursor: pointer; }
+    ul { list-style: none; margin: 22px 0 0; padding: 0; }
+    li { display: flex; align-items: center; gap: 12px; padding: 12px 4px; border-top: 1px solid var(--line); }
+    li input { width: 20px; height: 20px; accent-color: var(--accent); }
+    li.done span { color: var(--muted); text-decoration: line-through; }
+    footer { margin-top: 18px; color: var(--muted); font-size: 14px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Todos</h1>
+    <form id="add"><input id="text" type="text" placeholder="What needs doing?" autocomplete="off"><button>Add</button></form>
+    <ul id="list"></ul>
+    <footer id="count"></footer>
+  </main>
+  <script>
+    const list = document.getElementById('list');
+    let todos = JSON.parse(localStorage.getItem('todos') || '[]');
+    const save = () => localStorage.setItem('todos', JSON.stringify(todos));
+    function render() {
+      list.innerHTML = '';
+      todos.forEach((t, i) => {
+        const li = document.createElement('li'); li.className = t.done ? 'done' : '';
+        const box = document.createElement('input'); box.type = 'checkbox'; box.checked = t.done;
+        box.onchange = () => { t.done = box.checked; save(); render(); };
+        const span = document.createElement('span'); span.textContent = t.text;
+        li.append(box, span); list.appendChild(li);
+      });
+      const left = todos.filter(t => !t.done).length;
+      document.getElementById('count').textContent = todos.length ? `${left} left, saved in this browser` : 'Nothing yet.';
+    }
+    document.getElementById('add').onsubmit = e => {
+      e.preventDefault();
+      const input = document.getElementById('text');
+      if (!input.value.trim()) return;
+      todos.push({ text: input.value.trim(), done: false }); save(); input.value = ''; render();
+    };
+    render();
+  </script>
+</body>
+</html>

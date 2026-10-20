@@ -1,0 +1,84 @@
+{
+  "out": "todos-demo.mp4",
+  "poster": "todos-demo-poster.png",
+  "poster_at": 0.5,
+  "gif": "todos-demo.gif",
+  "width": 1600,
+  "ui_height": 1000,
+  "caption_height": 120,
+  "fade": 0.4,
+  "segments": [
+    {
+      "card": {
+        "title": "Todos",
+        "lead": "A todo list that keeps your items when the page reloads.",
+        "small": "example clip, made with release-clip"
+      },
+      "secs": 2.4
+    },
+    {
+      "take": "takes/add.mp4",
+      "in": 0.3,
+      "captions": [
+        {
+          "text": "Add three todos and tick one off.",
+          "at": 0
+        }
+      ],
+      "zoom": [
+        [
+          0.5,
+          1,
+          0.5,
+          0.5
+        ],
+        [
+          1.4,
+          1.45,
+          0.5,
+          0.36
+        ]
+      ]
+    },
+    {
+      "card": {
+        "title": "The page reloads.",
+        "lead": "Close the tab, come back later, or hit refresh.",
+        "dark": true
+      },
+      "secs": 2.4
+    },
+    {
+      "take": "takes/reload.mp4",
+      "in": 0.2,
+      "captions": [
+        {
+          "text": "All three are still there, and the tick is kept.",
+          "at": 0
+        }
+      ],
+      "zoom": [
+        [
+          0.8,
+          1,
+          0.5,
+          0.5
+        ],
+        [
+          1.8,
+          1.45,
+          0.5,
+          0.36
+        ]
+      ]
+    },
+    {
+      "card": {
+        "title": "Todos",
+        "lead": "github.com/you/todos",
+        "small": "Free and open source (MIT)."
+      },
+      "secs": 2.6
+    }
+  ]
+}
