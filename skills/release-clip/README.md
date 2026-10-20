@@ -10,8 +10,9 @@ You ship something and want a short video of it working. You ask your agent
 for a demo clip, and it reaches for `page.screencast()` or a pile of
 screenshots. What comes back is the whole window at 1x, so the text is a smudge
 at website width. Nothing says what you're looking at or what the last step
-proved. The timing is off too: one real run took 8.2 s and came out as 9.2 s of
-video, and under load a 16 s take has played back in 10 s. Then the mp4 goes
+proved. The timing is off too. `page.screencast()` stamps a fixed 25 fps, however many
+frames arrive. Filming a page that shows its own running clock, 9.66 s of real
+time played back in 4.08 s. Then the mp4 goes
 into the README, and GitHub shows "View raw" instead of a player.
 
 ## What it does
@@ -22,7 +23,8 @@ into the README, and GitHub shows "View raw" instead of a player.
 - **Keeps true speed.** It records with the CDP screencast and keeps every
   frame's timestamp. The encoder then builds a 30 fps sequence from those
   timestamps and prints video length against wall-clock length for every
-  take, so drift can't hide.
+  take. Against the same running clock, the clock moved 10.10 s across
+  10.13 s of video. `examples/clock.html` lets you rerun that check.
 - **Cuts a story from one plan file:**
   - a title card;
   - takes with one-line, numbered captions;
@@ -131,7 +133,7 @@ and in `SKILL.md`.
 | `lib.js` | finds puppeteer and Chrome |
 | `fonts/` | Pixelify Sans for card titles (SIL Open Font License) |
 | `references/vscode-extension.md` | filming a VS Code or Cursor add-on |
-| `examples/` | the todo app, its plan and runner, and the before/after pages and PNGs |
+| `examples/` | the todo app, its plan and runner, `clock.html` for the true-speed check, and the before/after pages and PNGs |
 
 ## Honest caveats
 

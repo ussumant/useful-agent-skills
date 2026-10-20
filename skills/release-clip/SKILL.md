@@ -65,7 +65,7 @@ thing itself. Takes resolve from the plan's folder.
 - **Native app:** out of scope. Use a screen recorder instead (QuickTime, OBS).
 
 ## QA checklist
-- [ ] Every take's encode line shows video length equal to wall-clock length.
+- [ ] Every take's encode line shows video length equal to wall-clock length. On a new machine or setup, film `examples/clock.html` for 10 s once. The clock readings in the first and last frames should differ by the video's length.
 - [ ] The contact sheet at each caption change has the caption on the right frame, and each zoom shows the proof.
 - [ ] Full-size frames are crisp: DPR 2, with no resize box and no stray selection or hover highlight.
 - [ ] Cards report `font ok` and `fits`.
@@ -74,12 +74,12 @@ thing itself. Takes resolve from the plan's folder.
 - [ ] No personal data in any frame: paths, peer names, account names.
 
 ## Gotchas that cost a round
-- **`page.screencast()` drifts.** 8.2 s of real time came out as 9.2 s, and under load a 16 s take came out as 10.1 s. Use `record.js` + `encode.py`.
+- **`page.screencast()` stamps a fixed 25 fps, however many frames actually arrive**, so playback speed follows the frame count, not the clock. Filming a page that shows its own running clock (`examples/clock.html`), 9.66 s of real time played back in 4.08 s, 2.4x too fast. A light todo flow went the other way: 8.2 s came out as 9.2 s. With `record.js` + `encode.py`, the clock moved 10.10 s across 10.13 s of video.
 - **ffconcat `duration` lines stretch frames under 40 ms**, which turned 12 s into 13.9 s. `encode.py` links a 30 fps sequence instead.
 - **`page.screenshot` or `setViewport` during a take fires a resize.** A terminal then flashes its `cols x rows` box. Set the viewport once, and don't `shot` while recording.
 - **Each `step.js` call is a new connection whose mouse starts at (0,0).** A bare mouse-down clicks the corner, so use `glide`/`glideto` and then `clickhere`.
-- **The Bash tool's shell is zsh, so `$XY` doesn't word-split.** Pass x and y as separate arguments.
-- **Homebrew ffmpeg has no `drawtext`.** That's why the cards are HTML→PNG.
+- **In zsh, an unquoted `$XY` doesn't word-split.** Pass x and y as separate arguments.
+- **Some ffmpeg builds (Homebrew's, for one) have no `drawtext`.** That's why the cards are HTML→PNG, which also gets real fonts.
 - **JPEG frames are full-range.** Unnormalized segments shift brightness at each fade, which is why `compose.py` forces tv range.
 - **ffmpeg colours must be `0xRRGGBB`, not `#fff`.** `compose.py` converts them.
 - **GitHub's file view doesn't play an mp4.** It shows "View raw", which downloads the file (checked 2026-10-21). A README needs the GIF, which plays inline (also checked), or an mp4 dragged into GitHub's web editor, which hosts it as an attachment. A 26 s clip makes a 4.5 MB GIF at 800 px and 12 fps.
@@ -89,7 +89,7 @@ thing itself. Takes resolve from the plan's folder.
 `lib.js` (finds puppeteer and Chrome) · `browser.js` · `step.js` · `record.js`
 · `encode.py` · `cards.js` · `compose.py` · `plan.example.json` ·
 `fonts/` (Pixelify Sans, OFL) · `references/vscode-extension.md` ·
-`examples/` (todo app, `plan.json`, `run-example.sh`, before/after pages and PNGs).
+`examples/` (todo app, `plan.json`, `run-example.sh`, `clock.html` for the speed check, before/after pages and PNGs).
 Needs node with puppeteer (found via `PUPPETEER_PATH`, local, or global npm),
 Chrome, python3 and ffmpeg.
 
