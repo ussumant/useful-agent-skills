@@ -36,6 +36,20 @@ see the savings.
 
 [Read more →](skills/fable-low-power/)
 
+### claude-wallpaper
+
+You ask for an animated wallpaper for the Claude desktop app and get one that
+never moves, turns the window white, or vanishes after your next message. This
+gives the agent the app's unwritten rules, a lint that catches the freeze
+triggers, a live test switch that needs no reload, and a photo check that
+proves motion before it says done.
+
+| before | after |
+|---|---|
+| ![before](skills/claude-wallpaper/examples/before.png) | ![after](skills/claude-wallpaper/examples/after.png) |
+
+[Read more →](skills/claude-wallpaper/)
+
 ## Install
 
 Paste into Claude Code or any coding agent:

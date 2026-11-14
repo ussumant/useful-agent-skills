@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2560 1600" preserveAspectRatio="xMidYMid slice">
+<style>
+.c1{animation:d1 140s linear infinite alternate}
+.c2{animation:d2 190s linear infinite alternate}
+.c3{animation:d3 110s linear infinite alternate}
+@keyframes d1{to{transform:translate(260px,0px)}}
+@keyframes d2{to{transform:translate(-300px,0px)}}
+@keyframes d3{to{transform:translate(200px,0px)}}
+.kite{animation:sway 3s ease-in-out infinite alternate;transform-box:view-box;transform-origin:2260px 380px}
+@keyframes sway{from{transform:translate(0px,0px) rotate(-4deg)}to{transform:translate(70px,-40px) rotate(4deg)}}
+.tail{animation:flick 1.5s ease-in-out infinite alternate;transform-box:view-box;transform-origin:2260px 455px}
+@keyframes flick{from{transform:rotate(-6deg)}to{transform:rotate(6deg)}}
+@media (prefers-reduced-motion: reduce){*{animation:none!important}}
+</style>
+<defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1b2a5e"/><stop offset=".55" stop-color="#4b4a8f"/><stop offset=".85" stop-color="#d98a8f"/><stop offset="1" stop-color="#ffc08f"/></linearGradient></defs>
+<rect width="2560" height="1600" fill="url(#sky)"/>
+<g class="c1" fill="#f6e3dc" opacity="0.55"><ellipse cx="520" cy="330" rx="150" ry="48"/><ellipse cx="430" cy="344" rx="100" ry="36"/><ellipse cx="615" cy="346" rx="110" ry="38"/><ellipse cx="540" cy="302" rx="90" ry="38"/></g>
+<g class="c2" fill="#f6e3dc" opacity="0.45"><ellipse cx="1500" cy="560" rx="195" ry="62"/><ellipse cx="1383" cy="578" rx="130" ry="47"/><ellipse cx="1624" cy="581" rx="143" ry="49"/><ellipse cx="1526" cy="524" rx="117" ry="49"/></g>
+<g class="c3" fill="#f6e3dc" opacity="0.4"><ellipse cx="900" cy="900" rx="135" ry="43"/><ellipse cx="819" cy="913" rx="90" ry="32"/><ellipse cx="986" cy="914" rx="99" ry="34"/><ellipse cx="918" cy="875" rx="81" ry="34"/></g>
+<path d="M0,1330 C300,1240 560,1260 860,1320 C1160,1380 1420,1230 1740,1250 C2050,1270 2300,1340 2560,1290 V1600 H0Z" fill="#2a2850"/>
+<path d="M0,1450 C340,1380 640,1400 980,1450 C1320,1500 1600,1390 1940,1410 C2240,1430 2420,1470 2560,1440 V1600 H0Z" fill="#171933"/>
+<g class="kite" shape-rendering="crispEdges"><g class="tail"><path d="M2260,455 C2220,510 2300,560 2260,620" fill="none" stroke="#f6e3dc" stroke-width="3"/><polygon points="2224,491 2238,500 2224,509" fill="#ffd1a3"/><polygon points="2252,491 2238,500 2252,509" fill="#ff9a8b"/><polygon points="2266,536 2280,545 2266,554" fill="#ffd1a3"/><polygon points="2294,536 2280,545 2294,554" fill="#ff9a8b"/><polygon points="2242,586 2256,595 2242,604" fill="#ffd1a3"/><polygon points="2270,586 2256,595 2270,604" fill="#ff9a8b"/></g><polygon points="2260,305 2315,370 2260,370 2205,370" fill="#ff8a65"/><polygon points="2315,370 2260,455 2260,370" fill="#e0533d"/><polygon points="2205,370 2260,455 2260,370" fill="#ffc27a"/><polygon points="2260,305 2260,370 2205,370" fill="#ffb199"/><path d="M2260,305V455M2205,370H2315" stroke="#5a2a3a" stroke-width="4" fill="none"/></g>
+</svg>

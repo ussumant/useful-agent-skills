@@ -1,0 +1,5 @@
+{
+  "name": "wallpaper-lab",
+  "version": "0.1.0",
+  "description": "A test switch for wallpapers: shows the SVG in a lab folder as the desktop app's backdrop, live, with no reload"
+}

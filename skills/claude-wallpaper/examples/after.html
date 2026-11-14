@@ -1,0 +1,18 @@
+<!doctype html><html><head><meta charset="utf-8"><style>*{box-sizing:border-box}body{margin:0;background:#f3f1ea;color:#1f2420;font:16px/1.45 -apple-system,"SF Pro Text",Helvetica,Arial,sans-serif}
+main{width:1330px;padding:34px 40px 30px}.k{font:600 12px/1 Menlo,monospace;letter-spacing:.08em;color:#646a65}
+h1{font:600 27px/1.2 -apple-system,Helvetica,sans-serif;margin:8px 0 6px}.sub{color:#4b514c;margin:0 0 18px;max-width:1100px}
+.row{display:flex;gap:18px;align-items:flex-start}.ph{width:300px}.ph img{display:block;width:300px;height:400px;border:1px solid #2a2a2a;border-radius:6px}
+.ph .l{font:600 12px/1 Menlo,monospace;letter-spacing:.06em;color:#646a65;margin:0 0 7px}
+.side{flex:1;min-width:0}.code{font:13px/1.5 Menlo,monospace;background:#fcfbf7;border:1px solid #d6d2c6;border-radius:6px;padding:11px 13px;margin:0 0 12px;white-space:pre-wrap;word-break:break-word}
+.verdict{font:600 15px/1.4 Menlo,monospace;padding:12px 14px;border-radius:6px;margin:0 0 12px}
+.bad{background:#f7e2dc;border:1px solid #b23a26;color:#7c2415}.good{background:#e1efdf;border:1px solid #3a7340;color:#22502a}
+.cap{font-size:13px;color:#646a65;margin:16px 0 0}.h{font:600 12px/1 Menlo,monospace;letter-spacing:.06em;color:#646a65;margin:0 0 6px}</style></head><body><main>
+<div class="k">CLAUDE-WALLPAPER · AFTER</div><h1>The same kite, built with the skill</h1><p class="sub">The lint names the one attribute that makes the app freeze a scene. With it removed, two photos prove the kite moves before the agent says done.</p>
+<div class="row">
+<div class="ph"><p class="l">PHOTO 1</p><img src="kite-moving-a.png"></div>
+<div class="ph"><p class="l">PHOTO 2 · ONE SECOND LATER</p><img src="kite-moving-b.png"></div>
+<div class="ph"><p class="l">WHAT CHANGED BETWEEN THEM</p><img src="kite-moving-diff.png"></div>
+<div class="side"><p class="h">LINT_SCENE.PY, BEFORE THE FIX</p><div class="code">FREEZE (tested): shape-rendering found; the app draws the scene still.</div><p class="h">MOVED.PY, AFTER THE FIX</p><div class="code">MOVING | gutter changed px=4066</div><div class="verdict good">MOVING · 4,066 changed pixels</div></div>
+</div>
+<p class="cap">Photos of the right margin of the Claude desktop window (engine 2.1.325), taken a second apart with the wallpaper lab. The scene is the skill's general example, reference/example-kite. The two scenes differ by one attribute.</p>
+</main></body></html>
